@@ -10,8 +10,10 @@ Estructura del Proyecto
 - `.gitignore`: Configuración para omitir archivos sensibles y pesados
 
 Por motivos de seguridad, la carpeta cert/ ha sido excluida del repositorio mediante el archivo .gitignore. Para que el servidor HTTPS funcione, debe:
-Crear una carpeta llamada cert en la raíz del proyecto.
-Añadir sus archivos key.pem y cert.pem dentro de dicha carpeta
+
+-Crear una carpeta llamada cert en la raíz del proyecto.
+
+-Añadir sus archivos key.pem y cert.pem dentro de dicha carpeta
 
 Para instalar las dependencias, ejecute el siguiente comando en la raíz del proyecto para generar la carpeta node_modules:
 **npm install**
