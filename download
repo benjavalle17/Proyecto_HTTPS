@@ -1,0 +1,5 @@
+# Carpeta de dependencias de Node.js
+node_modules/
+
+# Carpeta de certificados SSL
+cert/
