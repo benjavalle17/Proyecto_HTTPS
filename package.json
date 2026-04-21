@@ -1,0 +1,14 @@
+{
+  "name": "proyecto-https",
+  "version": "1.0.0",
+  "description": "Servidor HTTPS básico con Node.js y Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Grupo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
