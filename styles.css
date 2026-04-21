@@ -1,0 +1,55 @@
+// Seleccionamos elementos
+const loginForm = document.getElementById("loginForm");
+const mensaje = document.getElementById("mensaje");
+const togglePassword = document.getElementById("togglePassword");
+const clave = document.getElementById("clave");
+const protocolo = document.getElementById("protocolo");
+const estadoSeguridad = document.getElementById("estadoSeguridad");
+
+// Detectamos si la conexión es HTTP o HTTPS
+if (window.location.protocol === "https:") {
+  protocolo.textContent = "HTTPS";
+  estadoSeguridad.textContent = "Sí";
+  estadoSeguridad.style.color = "green";
+} else {
+  protocolo.textContent = "HTTP";
+  estadoSeguridad.textContent = "No";
+  estadoSeguridad.style.color = "red";
+}
+
+// Mostrar u ocultar contraseña
+togglePassword.addEventListener("click", () => {
+  if (clave.type === "password") {
+    clave.type = "text";
+    togglePassword.textContent = "Ocultar";
+  } else {
+    clave.type = "password";
+    togglePassword.textContent = "Mostrar";
+  }
+});
+
+// Evento de login
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const usuario = document.getElementById("usuario").value.trim();
+  const contrasena = clave.value.trim();
+  const recordarme = document.getElementById("recordarme").checked;
+
+  if (usuario === "admin" && contrasena === "1234") {
+    if (window.location.protocol === "https:") {
+      mensaje.textContent = "Inicio de sesión exitoso usando HTTPS.";
+      mensaje.style.color = "green";
+    } else {
+      mensaje.textContent = "Inicio de sesión realizado usando HTTP. La información no viaja cifrada.";
+      mensaje.style.color = "#dc2626";
+    }
+
+    if (recordarme) {
+      mensaje.textContent += " Opción 'Recordarme' activada.";
+    }
+  } else {
+    mensaje.textContent = "Usuario o contraseña incorrectos.";
+    mensaje.style.color = "red";
+  }
+});
